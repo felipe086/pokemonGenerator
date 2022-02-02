@@ -16,11 +16,11 @@ body {
   background: #e4e4e4;
 }
 
-.generateBtn {
+.pokemon-generate {
   border: none;
   border-radius: 10px;
   padding: 15px 15px;
-  background: inherit;
+  background: #fff;
   font-size: 16px;
   font-weight: bold;
   cursor: pointer;
@@ -40,7 +40,7 @@ img {
   width: 200px;
 }
 
-.info {
+.pokemon-info {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -48,6 +48,6 @@ img {
   font-size: 1.2rem;
 }
 
-.type {
+.pokemon-type {
   font-size: 1rem;
 }
