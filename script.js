@@ -23,7 +23,7 @@ const colorsByType = {
 }
 
 const pokemonTypesColor = Object.keys(colorsByType)
-
+console.log(pokemonTypesColor)
 const loading = () => {
   let loader = `<div class="loading"></div>`
   container.innerHTML = loader
@@ -42,9 +42,11 @@ const getPokemon = async _ => {
 const showPokemon = (id, name, types) => {
   container.innerHTML = ''
   const img = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}`
+
   const type = types.map(type => type.type.name)
-  const primaryType = pokemonTypesColor.find(type => type.indexOf(type) > -1)
+  const primaryType = pokemonTypesColor.find(value => type.indexOf(value) > -1)
   const color = colorsByType[primaryType]
+
   const output = `
     <div class="pokemon-img">
     <img src="${img}.png"" alt="${name}">
@@ -52,7 +54,9 @@ const showPokemon = (id, name, types) => {
     <div class="pokemon-info">
     <span class="pokemon-number">#${id.toString().padStart(3, '0')}</span>
     <h3 class="pokemon-name">${name[0].toUpperCase() + name.slice(1)}</h3>
-    <small class="pokemon-type">${type[0].toUpperCase() + type.slice(1)}</small>
+    <small class="pokemon-type">${
+      primaryType[0].toUpperCase() + primaryType.slice(1)
+    }</small>
     </div>
     `
   container.style.backgroundColor = color
